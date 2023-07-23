@@ -25,9 +25,19 @@ namespace PlcAdapter
         #endregion
 
         #region Read
-        short ReadInt16(string id);
-        int ReadInt32(string id);
         bool ReadBool(string id);
+        sbyte ReadSByte(string id);
+        byte ReadByte(string id);
+        short ReadInt16(string id);
+        ushort ReadUInt16(string id);
+        int ReadInt32(string id);
+        uint ReadUInt32(string id);
+        long ReadInt64(string id);
+        ulong ReadUInt64(string id);
+        float ReadSingle(string id);
+        double ReadDouble(string id);
+        string ReadString(string id, int length);
+
         short[] ReadInt16(params string[] ids);
         int[] ReadInt32(params string[] ids);
         bool[] ReadBool(params string[] ids);
@@ -40,6 +50,8 @@ namespace PlcAdapter
         void WriteInt16((string id, Int16 value) idValuePairs);
         void WriteInt32((string id, Int32 value) idValuePairs);
         void WriteBool((string id, bool value) idValuePairs);
+        void WriteString(string id, string value);
+
         #endregion
     }
 }
