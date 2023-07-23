@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlcAdapter
 {
-    public interface IAddressEntityRepository
+    public interface IRegisterRepository
     {
 
     }

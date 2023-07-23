@@ -4,8 +4,26 @@ using System.Text;
 
 namespace PlcAdapter
 {
-    public interface IPLC
+    public interface IPlc
     {
+        #region Properties
+        int Id { get; set; } // 主键
+        string Recognition { get; } // 品牌/型号
+        string IP { get; }
+        int Port { get; }
+        bool IsConnected { get; }
+        #endregion
+
+        #region Events
+        event EventHandler Connected;
+        event EventHandler Disconnected;
+        #endregion
+
+        #region Methods
+        void Connect();
+        void Disconnect();
+        #endregion
+
         #region Read
         short ReadInt16(string id);
         int ReadInt32(string id);
